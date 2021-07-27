@@ -1,43 +1,6 @@
+
+
 def is_balanced(s):
-    """
-        "is_balanced" that returns true if the brackets in a given string are balanced.
-
-        INCORRET, please see is_balanced_2
-    """
-    d = {"(": ")", "[": "]", "{": "}"}
-    ss = list(s)
-    print(ss)
-    stop = True
-    y = 0
-    while stop:
-        for i, item in enumerate(ss):
-            if item in d.keys():
-                for j in range(i, len(ss)):
-                    try:
-                        # print(ss, item, d.get(item), ss[j], j, i)
-                        if ss[j] == d.get(item):
-                            # print(ss, "before")
-                            del ss[i]
-                            del ss[j - 1]
-                            # print(ss, "after")
-                            break
-                        # idx = ''.join(ss).rindex(d.get(item))
-                        # del ss[idx]
-                    except IndexError:
-                        pass
-                # print(ss)
-            # print(ss)
-        y += 1
-        if y > 1000:
-            break
-    for k, v in d.items():
-        if k in ss or v in ss:
-            return False
-    # print(ss)
-    return True
-
-
-def is_balanced_2(s):
     """
         "is_balanced_2" that returns true if the brackets in a given string are balanced.
 
@@ -74,12 +37,12 @@ if __name__ == "__main__":
     s8 = ")("
     s9 = ""
 
-    assert is_balanced_2(s1) == True
-    assert is_balanced_2(s2) == True
-    assert is_balanced_2(s3) == True
-    assert is_balanced_2(s4) == False
-    assert is_balanced_2(s5) == False
-    assert is_balanced_2(s6) == False
-    assert is_balanced_2(s7) == False
-    assert is_balanced_2(s8) == False
-    assert is_balanced_2(s9) == True
+    assert is_balanced(s1) == True
+    assert is_balanced(s2) == True
+    assert is_balanced(s3) == True
+    assert is_balanced(s4) == False
+    assert is_balanced(s5) == False
+    assert is_balanced(s6) == False
+    assert is_balanced(s7) == False
+    assert is_balanced(s8) == False
+    assert is_balanced(s9) == True
